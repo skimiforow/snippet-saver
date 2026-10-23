@@ -1,0 +1,226 @@
+/* Snippet Saver site: same warm palette as the extension, light and dark. */
+
+:root {
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --text: #1c1917;
+  --muted: #57534e;
+  --border: #e7e5e4;
+  --accent: #f5b301;
+  --accent-text: #b45309;
+  --accent-contrast: #1c1400;
+  --shadow: 0 20px 50px rgba(28, 25, 23, 0.14);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0a09;
+    --surface: #1c1917;
+    --text: #fafaf9;
+    --muted: #a8a29e;
+    --border: #292524;
+    --accent: #fbbf24;
+    --accent-text: #fcd34d;
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+a {
+  color: var(--accent-text);
+}
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header & footer ---------- */
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.site-header nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.site-header nav a:hover {
+  color: var(--text);
+}
+
+.site-footer {
+  margin-top: 80px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+.site-footer a {
+  color: var(--muted);
+}
+
+/* ---------- Home ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 48px;
+  padding: 48px 0 24px;
+}
+
+.hero h1 {
+  margin: 0 0 16px;
+  font-size: clamp(34px, 5vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  margin: 0 0 28px;
+  max-width: 34em;
+  color: var(--muted);
+  font-size: 19px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button:hover {
+  filter: brightness(1.05);
+}
+
+.note {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.shot {
+  justify-self: center;
+  width: 100%;
+  max-width: 402px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+/* Shows the capture that matches the visitor's theme. */
+.shot-light {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  .shot-light {
+    display: block;
+  }
+  .shot-dark {
+    display: none;
+  }
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.feature {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.feature h2 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.feature p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ---------- Privacy policy ---------- */
+
+.doc {
+  max-width: 720px;
+  padding-top: 24px;
+}
+
+.doc h1 {
+  margin: 0 0 4px;
+  font-size: 34px;
+  line-height: 1.2;
+}
+
+.doc h2 {
+  margin: 32px 0 8px;
+  font-size: 21px;
+}
+
+.doc .updated {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+.doc li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 24px;
+  }
+}
