@@ -20,7 +20,7 @@
   <!-- Same text as store/privacy-policy.md in the extension's repository: change both together. -->
   <main class="wrap doc">
     <h1>Snippet Saver — Privacy Policy</h1>
-    <p class="updated">Last updated: 23 October 2026</p>
+    <p class="updated">Last updated: 28 October 2026</p>
 
     <p>Snippet Saver is a Chrome extension that saves text and images from web pages into notes. This policy explains what data it handles and where that data goes. In short: <strong>your notes stay in your browser, or in your own Google Drive if you turn on sync. The developer never receives them.</strong></p>
 
@@ -30,9 +30,13 @@
       <li>the text or image you selected, and the title and address (URL) of the page it came from;</li>
       <li>the notes, tags and Markdown text you write yourself;</li>
       <li>optionally, a local copy of saved images, so they stay visible if the original link breaks;</li>
-      <li>your settings (theme, image copies, right-click menu size, supporter badge).</li>
+      <li>your settings (theme, language, image copies, right-click menu size, supporter badge).</li>
     </ul>
     <p>This data is stored <strong>locally in your browser</strong> (Chrome's extension storage and IndexedDB). Snippet Saver only reads a page when you ask it to save something from that page, and then only the selected text or the image you chose.</p>
+
+    <h2>Private notes</h2>
+    <p>Notes you mark as private are encrypted on your computer (AES-256-GCM, with a key derived from your PIN or passphrase using PBKDF2) before they are stored, synced or exported as a JSON backup. Their title, text, snippets, tags and source page are stored only in encrypted form; the date, pinned state and an internal identifier stay readable so sync can work. Private notes don't keep a local copy of their images, only the link.</p>
+    <p>Your PIN or passphrase is <strong>never stored or sent anywhere</strong>. Snippet Saver keeps only a random salt and an encrypted check value, used to recognise the right PIN; these are synced with your settings so the same PIN works on your other computers. Nobody without your PIN can read private notes, including the developer. For the same reason, a forgotten PIN can't be recovered.</p>
 
     <h2>Optional Google Drive sync</h2>
     <p>If you turn on sync in Settings, you sign in with your Google account and Snippet Saver copies your notes, saved images and settings to the <strong>app data folder of your own Google Drive</strong>. This is a private folder that only Snippet Saver can access; Snippet Saver cannot see any of your other Drive files. Snippet Saver also reads your Google account's email address, only to show you which account is connected. It is stored in your browser and nowhere else.</p>
@@ -56,7 +60,7 @@
     <h2>Your control over your data</h2>
     <ul>
       <li>Edit or delete notes at any time; <strong>Settings → Delete all</strong> removes every note and saved image from this browser (and from your Drive if sync is on).</li>
-      <li><strong>Export</strong> your notes as JSON or Markdown from Settings.</li>
+      <li><strong>Export</strong> your notes as JSON or Markdown from Settings. Private notes stay encrypted in JSON backups; the Markdown export includes them only if you enter your PIN.</li>
       <li><strong>Disconnect</strong> Google Drive in Settings. To also remove the synced copy, delete Snippet Saver's hidden app data in Google Drive (Settings → Manage apps → Snippet Saver → Delete hidden app data), and you can revoke its access at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
       <li>Uninstalling the extension deletes the data stored in this browser.</li>
     </ul>
